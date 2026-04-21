@@ -3,19 +3,20 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
-import { 
-  ClipboardList, 
-  Scale, 
-  DollarSign, 
-  Code, 
-  Smartphone, 
-  Globe, 
-  Database, 
-  Cloud, 
+import {
+  ClipboardList,
+  Scale,
+  DollarSign,
+  Code,
+  Smartphone,
+  Globe,
+  Database,
+  Cloud,
   Shield,
   Laptop,
   ShoppingCart,
   Search,
+  Palette,
 } from "lucide-react";
 
 const servicesData: Record<string, {
@@ -690,10 +691,10 @@ const ServiceDetail = () => {
               Let's discuss how our {service.title.toLowerCase()} services can help your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="xl" asChild>
+              <Button variant="secondary" size="lg" asChild>
                 <Link to="/contact">Get Free Consultation</Link>
               </Button>
-              <Button variant="outline" size="xl" className="border-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
+              <Button variant="outline" size="lg" className="border-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
                 <Link to="/services">
                   Explore Other Services
                   <ArrowRight className="w-4 h-4 ml-2" />

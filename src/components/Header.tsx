@@ -18,6 +18,7 @@ const Header = () => {
     { name: "About Us", href: "/about", isPage: true },
     { name: "Why Us", href: "/why-us", isPage: true },
     { name: "Services", href: "/services", hasDropdown: true, isPage: true },
+    { name: "Portfolio", href: "/portfolio", isPage: true },
     { name: "Industries", href: "/industries", isPage: true },
     { name: "Blog", href: "/blog", isPage: true },
   ];

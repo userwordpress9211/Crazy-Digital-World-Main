@@ -1,23 +1,58 @@
-const projects = [
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
+const caseStudies = [
   {
-    name: "E-commerce Sales Growth",
+    name: "Mobile Phone Accessories Brand",
     category: "Performance Marketing",
+    type: "Meta Ads",
+    highlight: "Significant increase in online orders & revenue",
+    stats: [
+      { label: "Campaign Type", value: "Meta Ads" },
+      { label: "Result", value: "Sales Up" },
+      { label: "Strategy", value: "Awareness + Conversion" },
+    ],
+    image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=400&fit=crop",
+    color: "#1EA6DA",
+  },
+  {
+    name: "Google Ads PPC Campaigns",
+    category: "Performance Marketing",
+    type: "Google Ads",
+    highlight: "68K Clicks · 7.03K Conversions · ₹219 Cost/Conv",
+    stats: [
+      { label: "Total Clicks", value: "68K" },
+      { label: "Conversions", value: "7.03K" },
+      { label: "Cost/Conv", value: "₹219" },
+    ],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    color: "#2EC4F1",
   },
   {
-    name: "Real Estate Lead Generation",
-    category: "Digital Marketing",
+    name: "TheHighConfectionary.com",
+    category: "SEO",
+    type: "Search Engine Optimization",
+    highlight: "+50% Organic Traffic YoY · Top 10 for 20 Keywords",
+    stats: [
+      { label: "Organic Traffic", value: "+50%" },
+      { label: "Top 10 Keywords", value: "20" },
+      { label: "CTR", value: "16.8%" },
+    ],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    color: "#3B82F6",
   },
   {
-    name: "Healthcare Brand Building",
-    category: "Branding & Creative",
-    image: "https://images.unsplash.com/photo-1547954575-855750c57bd3?w=600&h=400&fit=crop",
-  },
-  {
-    name: "Startup Growth Scaling",
-    category: "Growth Marketing",
-    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop",
+    name: "727moto.com.au",
+    category: "SEO",
+    type: "Search Engine Optimization",
+    highlight: "+45% Organic Traffic YoY · Top 10 for 15 Keywords",
+    stats: [
+      { label: "Organic Traffic", value: "+45%" },
+      { label: "Top 10 Keywords", value: "15" },
+      { label: "Impressions", value: "415K" },
+    ],
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+    color: "#1EA6DA",
   },
 ];
 
@@ -31,37 +66,58 @@ const PortfolioSection = () => {
             Our Portfolio
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-[#1F2933] mb-6">
-            Recent Success Stories
+            Real Results. Real Clients.
           </h2>
           <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
-            Discover some of our most recent projects that reflect our commitment to quality, 
-            innovation, and client satisfaction.
+            From PPC to SEO, here are some of our proven case studies that showcase measurable growth for our clients.
           </p>
         </div>
 
-        {/* Project Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projects.map((project, index) => (
+        {/* Case Study Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {caseStudies.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl cursor-pointer shadow-sm"
+              className="group bg-white border border-[#E3E8EE] rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[#1EA6DA]/30 hover:-translate-y-1"
             >
-              <img
-                src={project.image}
-                alt={project.name}
-                className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1F2933]/90 via-[#1F2933]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <p className="text-[#1EA6DA] text-xs font-bold uppercase tracking-wider mb-1">
-                  {project.category}
-                </p>
-                <h3 className="text-xl font-bold text-white font-heading">
-                  {project.name}
-                </h3>
+              <div className="relative overflow-hidden h-52">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: project.color }}>
+                    {project.type}
+                  </span>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-xs font-bold uppercase tracking-wider text-[#1EA6DA] mb-1">{project.category}</p>
+                <h3 className="text-xl font-bold text-[#1F2933] mb-2">{project.name}</h3>
+                <p className="text-sm text-[#4B5563] mb-5">{project.highlight}</p>
+                <div className="grid grid-cols-3 gap-3 mb-5">
+                  {project.stats.map((stat, i) => (
+                    <div key={i} className="bg-[#F8FBFD] rounded-xl p-3 text-center">
+                      <div className="text-lg font-bold text-[#1EA6DA]">{stat.value}</div>
+                      <div className="text-xs text-[#6B7280] mt-0.5">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All */}
+        <div className="text-center mt-14">
+          <Link
+            to="/portfolio"
+            className="inline-flex items-center gap-2 text-[#1EA6DA] font-bold hover:gap-3 transition-all"
+          >
+            View Full Portfolio
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>

@@ -75,6 +75,7 @@ const Footer = () => {
               {[
                 { name: "About Us", href: "/about" },
                 { name: "Why Us", href: "/why-us" },
+                { name: "Portfolio", href: "/portfolio" },
                 { name: "Industries", href: "/industries" },
                 { name: "Blog", href: "/blog" },
               ].map((item) => (
