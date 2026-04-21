@@ -1,176 +1,109 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Home, ArrowLeft, Search, Mail, FileQuestion } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Home, ArrowLeft, Phone, Mail } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const NotFound = () => {
   const navigate = useNavigate();
-  const [countdown, setCountdown] = useState(10);
-  const [autoRedirect, setAutoRedirect] = useState(true);
-
-  // Auto redirect countdown
-  useEffect(() => {
-    if (!autoRedirect) return;
-
-    if (countdown > 0) {
-      const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
-      return () => clearTimeout(timer);
-    } else {
-      navigate('/');
-    }
-  }, [countdown, navigate, autoRedirect]);
-
-  const cancelAutoRedirect = () => {
-    setAutoRedirect(false);
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-secondary/10 flex items-center justify-center px-4">
-      <div className="max-w-4xl w-full text-center">
-        {/* 404 Illustration */}
-        <div className="mb-8 relative">
-          {/* Large 404 Text */}
-          <div className="text-[150px] md:text-[250px] font-bold font-heading leading-none">
-            <span className="text-primary/20">4</span>
-            <span className="text-primary/30 relative inline-block">
-              0
-              {/* Spinning Icon inside 0 */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 md:w-32 md:h-32">
-                  <FileQuestion className="w-full h-full text-primary/50 animate-pulse" />
+    <div className="min-h-screen bg-white">
+      <Header />
+      <main className="pt-20">
+        <section className="py-24 bg-[#F8FBFD] min-h-[70vh] flex items-center">
+          <div className="section-container">
+            <div className="max-w-3xl mx-auto text-center">
+              {/* 404 Number */}
+              <div className="relative mb-8 select-none">
+                <span className="text-[160px] md:text-[220px] font-bold font-heading leading-none text-[#1EA6DA]/10">
+                  404
+                </span>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-7xl md:text-8xl font-bold font-heading text-[#1EA6DA]">
+                    404
+                  </span>
                 </div>
               </div>
-            </span>
-            <span className="text-primary/20">4</span>
-          </div>
-        </div>
 
-        {/* Main Content */}
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-5xl font-bold font-heading text-foreground mb-4">
-            Oops! Page Not Found
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-2 max-w-2xl mx-auto">
-            The page you're looking for seems to have wandered off into the digital wilderness.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Don't worry, even the best explorers get lost sometimes!
-          </p>
-        </div>
+              {/* Message */}
+              <div className="inline-block px-4 py-1.5 mb-4 text-sm font-bold tracking-wider text-[#1EA6DA] uppercase bg-[#EAF6FB] rounded-full">
+                Page Not Found
+              </div>
+              <h1 className="text-3xl md:text-5xl font-bold font-heading text-[#1F2933] mb-4">
+                Oops! This Page Doesn't Exist
+              </h1>
+              <p className="text-lg text-[#4B5563] mb-10 max-w-xl mx-auto leading-relaxed">
+                The page you're looking for may have been moved, deleted, or never existed.
+                Let's get you back on track.
+              </p>
 
-        {/* Auto Redirect Notice */}
-        {autoRedirect && (
-          <div className="mb-8 inline-block bg-primary/10 border border-primary/20 rounded-lg px-6 py-3">
-            <p className="text-sm text-foreground">
-              Redirecting to homepage in{" "}
-              <span className="font-bold text-primary text-lg">{countdown}</span>{" "}
-              seconds...
-            </p>
-            <button
-              onClick={cancelAutoRedirect}
-              className="text-xs text-muted-foreground hover:text-foreground underline mt-1"
-            >
-              Cancel auto-redirect
-            </button>
-          </div>
-        )}
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#1EA6DA] text-white rounded-xl font-semibold hover:bg-[#0F5FA8] transition-all shadow-lg shadow-[#1EA6DA]/20"
+                >
+                  <Home className="w-5 h-5" />
+                  Back to Home
+                </Link>
+                <button
+                  onClick={() => navigate(-1)}
+                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-white border border-[#E3E8EE] text-[#1F2933] rounded-xl font-semibold hover:border-[#1EA6DA] hover:text-[#1EA6DA] transition-all"
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                  Go Back
+                </button>
+              </div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
-          >
-            <Home className="w-5 h-5" />
-            Back to Home
-          </Link>
+              {/* Popular Pages */}
+              <div className="border-t border-[#E3E8EE] pt-10 mb-10">
+                <p className="text-sm font-bold text-[#1F2933] uppercase tracking-wider mb-5">Popular Pages</p>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  {[
+                    { name: "About Us", href: "/about" },
+                    { name: "Services", href: "/services" },
+                    { name: "Portfolio", href: "/portfolio" },
+                    { name: "Why Us", href: "/why-us" },
+                    { name: "Blog", href: "/blog" },
+                    { name: "Contact", href: "/contact" },
+                  ].map((link) => (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      className="px-4 py-2 bg-white border border-[#E3E8EE] rounded-full text-sm text-[#4B5563] hover:border-[#1EA6DA] hover:text-[#1EA6DA] transition-all"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
 
-          <button
-            onClick={() => navigate(-1)}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-foreground rounded-lg font-medium hover:bg-secondary/80 transition-all hover:scale-105"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            Go Back
-          </button>
-
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-card border border-border text-foreground rounded-lg font-medium hover:bg-secondary/50 transition-all hover:scale-105"
-          >
-            <Search className="w-5 h-5" />
-            View Blog
-          </Link>
-        </div>
-
-        {/* Quick Links */}
-        <div className="border-t border-border pt-8">
-          <h2 className="text-lg font-semibold text-foreground mb-4">
-            Popular Pages
-          </h2>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-            <Link
-              to="/"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Home
-            </Link>
-            <span className="text-border">•</span>
-            <Link
-              to="/about"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              About Us
-            </Link>
-            <span className="text-border">•</span>
-            <Link
-              to="/services"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Services
-            </Link>
-            <span className="text-border">•</span>
-            <Link
-              to="/blog"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Blog
-            </Link>
-            <span className="text-border">•</span>
-            <Link
-              to="/contact"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
-
-        {/* Help Section */}
-        <div className="mt-12 bg-card border border-border rounded-xl p-6 max-w-md mx-auto">
-          <div className="flex items-center justify-center mb-3">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-              <Mail className="w-6 h-6 text-primary" />
+              {/* Contact Card */}
+              <div className="bg-white border border-[#E3E8EE] rounded-2xl p-8 max-w-md mx-auto shadow-sm">
+                <p className="font-bold text-[#1F2933] mb-2">Still need help?</p>
+                <p className="text-sm text-[#4B5563] mb-5">Our team is ready to assist you.</p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <a
+                    href="tel:+919039502924"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#EAF6FB] text-[#1EA6DA] rounded-xl text-sm font-semibold hover:bg-[#1EA6DA] hover:text-white transition-all"
+                  >
+                    <Phone className="w-4 h-4" />
+                    +91 9039 502 924
+                  </a>
+                  <a
+                    href="mailto:info@crazydigitalworlds.com"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#EAF6FB] text-[#1EA6DA] rounded-xl text-sm font-semibold hover:bg-[#1EA6DA] hover:text-white transition-all"
+                  >
+                    <Mail className="w-4 h-4" />
+                    Email Us
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <h3 className="font-semibold text-foreground mb-2">
-            Still can't find what you're looking for?
-          </h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Our team is here to help. Get in touch and we'll assist you right away.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
-          >
-            Contact Support
-            <ArrowLeft className="w-4 h-4 rotate-180" />
-          </Link>
-        </div>
-
-        {/* Error Code */}
-        <div className="mt-12 text-xs text-muted-foreground">
-          Error Code: 404 | Page Not Found
-        </div>
-      </div>
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 };

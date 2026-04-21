@@ -10,22 +10,26 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Our Office",
-    details: ["123 Digital Avenue, Tech City", "Plot No. 367 Pu4 Scheme No. 54 Behind C21 Mall Indore - 452010 (M.P.)"],
+    details: ["Plot No. 367 Pu4 Scheme No. 54", "Behind C21 Mall Indore - 452010 (M.P.)"],
+    href: null,
   },
   {
     icon: Phone,
     title: "Phone",
     details: ["+91 9039 502 924"],
+    href: "tel:+919039502924",
   },
   {
     icon: Mail,
     title: "Email",
     details: ["info@crazydigitalworlds.com"],
+    href: "mailto:info@crazydigitalworlds.com",
   },
   {
     icon: Clock,
     title: "Working Hours",
     details: ["Monday - Friday: 9AM - 6PM", "Saturday: 10AM - 2PM"],
+    href: null,
   },
 ];
 
@@ -150,9 +154,15 @@ ${formData.message}
                           {item.title}
                         </h3>
                         {item.details.map((detail, idx) => (
-                          <p key={idx} className="text-[#4B5563] text-sm">
-                            {detail}
-                          </p>
+                          item.href ? (
+                            <a key={idx} href={item.href} className="text-[#4B5563] text-sm hover:text-[#1EA6DA] transition-colors block">
+                              {detail}
+                            </a>
+                          ) : (
+                            <p key={idx} className="text-[#4B5563] text-sm">
+                              {detail}
+                            </p>
+                          )
                         ))}
                       </div>
                     </div>
@@ -258,12 +268,12 @@ ${formData.message}
                         disabled={isSubmitting}
                       >
                         <option value="">Select a service</option>
-                        <option value="it-consulting">IT Services & Consulting</option>
-                        <option value="ecommerce">E-Commerce & Listings</option>
-                        <option value="workflow">Operations & Workflow</option>
-                        <option value="web-development">Web Development</option>
-                        <option value="mobile-app">Mobile App Development</option>
-                        <option value="custom-software">Custom Software Development</option>
+                        <option value="performance-marketing">Performance Marketing</option>
+                        <option value="seo-services">Search Engine Optimization (SEO)</option>
+                        <option value="social-media-marketing">Social Media Management</option>
+                        <option value="lead-generation">Lead Generation</option>
+                        <option value="web-development">Website Design & Development</option>
+                        <option value="branding-creative">Branding & Creative Strategy</option>
                       </select>
                     </div>
 
