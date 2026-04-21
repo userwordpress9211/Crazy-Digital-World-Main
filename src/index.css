@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Brand Colors */
+    --primary: 197 76% 49%; /* #1EA6DA */
+    --primary-dark: 211 84% 36%; /* #0F5FA8 */
+    --primary-light: 198 78% 95%; /* #EAF6FB */
+    
+    /* Secondary Colors */
+    --background: 0 0% 100%; /* #FFFFFF */
+    --section-bg: 204 60% 98%; /* #F8FBFD */
+    --light-gray: 210 20% 96%; /* #F1F4F7 */
+    --border: 212 25% 91%; /* #E3E8EE */
+
+    /* Text Colors */
+    --foreground: 210 25% 16%; /* #1F2933 */
+    --text-secondary: 210 14% 34%; /* #4B5563 */
+    --muted: 210 10% 46%; /* #6B7280 */
+    --muted-foreground: 210 10% 46%;
+
+    /* Accent & Utility */
+    --accent-cyan: 194 88% 56%; /* #2EC4F1 */
+    --success-star: 42 96% 57%; /* #FBBF24 */
+    --icon-blue: 217 91% 60%; /* #3B82F6 */
+
+    /* Footer Colors */
+    --footer-bg: 201 80% 97%; /* #F3FAFE */
+    --footer-text: 210 14% 34%; /* #4B5563 */
+    --footer-heading: 210 25% 16%; /* #1F2933 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 25% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 25% 16%;
+
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 25% 16%;
+
+    --accent: 197 76% 49%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --input: 212 25% 91%;
+    --ring: 197 76% 49%;
+
+    --radius: 0.75rem; /* Modern rounded corners */
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, #1EA6DA 0%, #0F5FA8 100%);
+    --shadow-card: 0 10px 30px -5px rgba(31, 41, 51, 0.08);
+    --shadow-card-hover: 0 20px 40px -10px rgba(31, 41, 51, 0.12);
+    --shadow-button: 0 4px 14px -2px rgba(30, 166, 218, 0.35);
+
+    --sidebar-background: 204 60% 98%;
+    --sidebar-foreground: 210 14% 34%;
+    --sidebar-primary: 197 76% 49%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 198 78% 95%;
+    --sidebar-accent-foreground: 197 76% 49%;
+    --sidebar-border: 212 25% 91%;
+    --sidebar-ring: 197 76% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    @apply text-[#1F2933];
+  }
+  
+  p {
+    @apply text-[#4B5563];
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-[#1F2933];
+  }
+
+  .section-subtitle {
+    @apply text-lg text-[#4B5563] max-w-3xl mx-auto;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-1;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1EA6DA] to-[#0F5FA8];
+  }
+
+  .underline-decoration {
+    @apply relative inline-block;
+  }
+
+  .underline-decoration::after {
+    content: '';
+    @apply absolute left-1/2 -translate-x-1/2 bottom-0 w-16 h-1 bg-[#1EA6DA] rounded-full;
+  }
+  
+  .btn-primary {
+    @apply bg-[#1EA6DA] text-white hover:bg-[#0F5FA8] transition-colors rounded-lg px-6 py-3 font-semibold shadow-[var(--shadow-button)];
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-[#1EA6DA] text-[#1EA6DA] hover:bg-[#1EA6DA] hover:text-white transition-all rounded-lg px-6 py-3 font-semibold;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
