@@ -23,8 +23,7 @@ const HeroSection = () => {
               We Don't Just Market. We Build <span className="text-[#1EA6DA]">Digital Empires</span>
             </h1>
             <p className="text-lg text-[#4B5563] mb-8 leading-relaxed max-w-xl">
-              We combine creativity, data, and AI to deliver measurable business growth. 
-              From startups to global brands, we help businesses dominate the digital landscape with performance-driven marketing strategies.
+              AI-powered digital marketing strategies that generate leads, boost revenue, and scale your business globally.
             </p>
             
             <div className="flex flex-wrap gap-4 mb-10">
@@ -43,6 +42,7 @@ const HeroSection = () => {
                 "Data-driven campaigns",
                 "ROI-focused execution",
                 "AI-powered strategies",
+                "Transparent reporting",
                 "Global client experience"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 text-[#4B5563]">

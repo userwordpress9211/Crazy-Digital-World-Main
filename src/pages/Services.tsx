@@ -85,10 +85,10 @@ const Services = () => {
               Ready to Transform Your Business?
             </h2>
             <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
-              Let's discuss how our services can help you achieve your business goals.
+              Let's turn your brand into a revenue machine. Book your free consultation today.
             </p>
             <Button className="bg-white text-[#1EA6DA] hover:bg-[#EAF6FB] h-14 px-10 rounded-xl text-lg font-bold shadow-xl" asChild>
-              <Link to="/contact">Get Free Consultation</Link>
+              <Link to="/contact">Book Your Free Consultation</Link>
             </Button>
           </div>
         </section>

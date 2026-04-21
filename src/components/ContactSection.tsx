@@ -17,8 +17,7 @@ const ContactSection = () => {
               Ready to Scale Your <span className="text-[#1EA6DA]">Business?</span>
             </h2>
             <p className="text-lg text-[#4B5563] mb-10 leading-relaxed">
-              Ready to accelerate your growth with data-driven digital marketing? 
-              Let's discuss your goals and create a custom strategy for measurable results.
+              Let's turn your brand into a revenue machine. Book your free consultation and get a custom digital marketing strategy built for real growth.
             </p>
 
             <div className="space-y-8">

@@ -48,9 +48,7 @@ const About = () => {
                 About <span className="text-[#1EA6DA]">Crazy Digital World</span>
               </h1>
               <p className="text-xl text-[#4B5563] leading-relaxed">
-                We are a leading IT solutions provider dedicated to helping businesses transform 
-                through innovative technology. With over a decade of experience, we've helped 
-                hundreds of companies achieve their digital transformation goals.
+                Crazy Digital World is a results-driven digital marketing agency based in Indore, helping businesses grow across India, USA, Dubai, and beyond. We believe marketing is not about impressions — it's about impact.
               </p>
             </div>
           </div>
@@ -80,23 +78,17 @@ const About = () => {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold font-heading text-[#1F2933] mb-6">
-                  Empowering Businesses Since 2015
+                  Who We Are
                 </h2>
                 <div className="space-y-6 text-[#4B5563] leading-relaxed">
                   <p>
-                    Founded with a vision to bridge the gap between businesses and technology, 
-                    Crazy Digital World has grown from a small startup to a trusted IT partner for 
-                    companies worldwide.
+                    At <strong className="text-[#1F2933]">Crazy Digital World</strong>, we combine creativity, data, and technology to deliver real business growth. From startups to global brands, we help businesses dominate the digital landscape with performance-driven marketing strategies.
                   </p>
                   <p>
-                    Our journey began with a simple belief: every business deserves access to 
-                    world-class technology solutions. Today, we continue to uphold this belief 
-                    by delivering innovative, scalable, and cost-effective solutions.
+                    Based in Indore, we serve clients across India, USA, Dubai, and beyond. We believe marketing is not about impressions — it's about impact.
                   </p>
                   <p>
-                    With a team of experienced developers, designers, and strategists, we've 
-                    successfully completed over 500 projects across various industries including 
-                    healthcare, finance, retail, and more.
+                    With a team of experienced marketers, strategists, and creatives, we've successfully executed campaigns across industries including e-commerce, real estate, education, healthcare, and more.
                   </p>
                 </div>
               </div>
@@ -114,8 +106,36 @@ const About = () => {
           </div>
         </section>
 
-        {/* Values Section */}
+        {/* Our Approach Section */}
         <section className="py-24 bg-[#F8FBFD]">
+          <div className="section-container">
+            <div className="text-center mb-16">
+              <div className="inline-block px-4 py-1.5 mb-4 text-sm font-bold tracking-wider text-[#1EA6DA] uppercase bg-[#EAF6FB] rounded-full">
+                Our Approach
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold font-heading text-[#1F2933] mb-4">
+                Our 3-Step <span className="text-[#1EA6DA]">Growth System</span>
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { step: "01", title: "Analyze", subtitle: "Data & Market Research", description: "We deep-dive into your business, competitors, and market to uncover growth opportunities backed by real data." },
+                { step: "02", title: "Strategize", subtitle: "Custom Growth Plan", description: "We craft a tailored digital marketing strategy aligned to your business goals, audience, and budget." },
+                { step: "03", title: "Execute", subtitle: "Performance + Optimization", description: "We launch, monitor, and continuously optimize campaigns to maximize ROI and deliver measurable results." },
+              ].map((item, index) => (
+                <div key={index} className="bg-white border border-[#E3E8EE] rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-xl hover:border-[#1EA6DA]/30">
+                  <div className="text-5xl font-bold text-[#1EA6DA]/20 mb-4">{item.step}</div>
+                  <h3 className="text-2xl font-bold font-heading text-[#1F2933] mb-1">{item.title}</h3>
+                  <p className="text-sm font-semibold text-[#1EA6DA] mb-4">{item.subtitle}</p>
+                  <p className="text-[#4B5563] leading-relaxed">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Values Section */}
+        <section className="py-24 bg-white">
           <div className="section-container">
             <div className="text-center mb-16">
               <div className="inline-block px-4 py-1.5 mb-4 text-sm font-bold tracking-wider text-[#1EA6DA] uppercase bg-[#EAF6FB] rounded-full">

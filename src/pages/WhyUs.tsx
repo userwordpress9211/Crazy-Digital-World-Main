@@ -38,7 +38,7 @@ const differentiators = [
 ];
 
 const industries = [
-  "E-commerce", "Real Estate", "Healthcare", "Education", "Startups", "Local Businesses"
+  "E-commerce", "Real Estate", "Education", "Healthcare", "Startups & Local Businesses"
 ];
 
 const WhyUs = () => {
@@ -99,6 +99,18 @@ const WhyUs = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Results Mindset */}
+        <section className="py-16 bg-[#1EA6DA]">
+          <div className="section-container text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Our Results Mindset
+            </h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              We don't chase clicks. We chase <strong>conversions, revenue, and business growth.</strong>
+            </p>
           </div>
         </section>
 
