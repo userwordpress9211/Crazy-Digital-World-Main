@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import logoImage from "@/assets/logo.png";
 
 const industries = [
   { name: "E-commerce", href: "/industries" },
@@ -28,10 +29,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="flex items-center">
-                <span className="text-2xl font-bold text-[#1EA6DA] font-heading">Crazy</span>
-                <span className="text-2xl font-bold text-[#1F2933] font-heading ml-1">Digital World</span>
-              </div>
+              <img src={logoImage} alt="Crazy Digital World" className="h-12 w-auto" />
             </Link>
             <p className="text-[#4B5563] mb-6 leading-relaxed">
               We combine creativity, data, and AI to deliver measurable business growth. 
@@ -103,11 +101,11 @@ Behind C21 Mall Indore - 452010 (M.P.)</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Phone className="w-5 h-5 text-[#1EA6DA] shrink-0" />
-                <span>+91 9039 502 924</span>
+                <a href="tel:+919039502924" className="hover:text-[#1EA6DA] transition-colors">+91 9039 502 924</a>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Mail className="w-5 h-5 text-[#1EA6DA] shrink-0" />
-                <span>info@crazydigitalworlds.com</span>
+                <a href="mailto:info@crazydigitalworlds.com" className="hover:text-[#1EA6DA] transition-colors">info@crazydigitalworlds.com</a>
               </li>
             </ul>
           </div>
